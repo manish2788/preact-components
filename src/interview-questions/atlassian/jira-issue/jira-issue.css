@@ -1,0 +1,12 @@
+.container {
+  margin: 1%;
+  width: 50vw;
+}
+.container > * {
+  padding: 1%;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}

@@ -2,42 +2,27 @@ import { useState } from 'preact/hooks'
 import preactLogo from './assets/preact.svg'
 import viteLogo from '/vite.svg'
 import './app.css'
+import InputSearch from './components/input-search/input-search';
+import Table from './components/table/table';
+import JiraIssue from './interview-questions/atlassian/jira-issue/jira-issue';
 
 export function App() {
-  const [count, setCount] = useState(0)
+
+  const sampleData = [
+    { id: 1, name: 'Alice Johnson', age: 28, city: 'New York' },
+    { id: 2, name: 'Bob Smith', age: 34, city: 'Los Angeles' },
+    { id: 3, name: 'Charlie Brown', age: 25, city: 'Chicago' },
+    { id: 4, name: 'David Wilson', age: 42, city: 'Houston' },
+    { id: 5, name: 'Emma Davis', age: 30, city: 'San Francisco' }
+];
+
+const columns = ['id', 'name', 'age', 'city'];
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank">
-          <img src={preactLogo} class="logo preact" alt="Preact logo" />
-        </a>
-      </div>
-      <h1>Vite + Preact</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p>
-        Check out{' '}
-        <a
-          href="https://preactjs.com/guide/v10/getting-started#create-a-vite-powered-preact-app"
-          target="_blank"
-        >
-          create-preact
-        </a>
-        , the official Preact + Vite starter
-      </p>
-      <p class="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
+      {/* <Table data={sampleData} columns={columns} /> */}
+      <JiraIssue />
     </>
   )
 }
